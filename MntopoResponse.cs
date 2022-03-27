@@ -31,8 +31,8 @@ namespace MntopoSpotElevation
                 }
 
                 // If the user clicks out of data extents, the server will return json containing an error code.
-                // The casting will throw an error as there will not be a regex match.
-                catch
+                // The casting to double will throw a FormatException as elevationString will be empty.
+                catch(FormatException)
                 {
                     return -1;
                 }
